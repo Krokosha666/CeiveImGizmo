@@ -17,29 +17,29 @@ end
 
 --- @within Ray
 --- @function Draw
---- @param Origin CFrame
+--- @param Transform CFrame
 --- @param Length number
-function Gizmo:Draw(Origin: CFrame, Length: number)
+function Gizmo:Draw(Transform: CFrame, Length: number)
 	local Ceive = self.Ceive
 
 	if not Ceive.Enabled then
 		return
 	end
 
-	local Origin = Origin.Position
-    	local End = Origin.Position + (Origin.LookVector * Length)
+	local Origin = Transform.Position
+    	local End = Transform.Position + (Transform.LookVector * Length)
 
     	Ceive.Line:Draw(Origin, End)
 end
 
 --- @within Ray
 --- @function Create
---- @param Origin CFrame
+--- @param Transform CFrame
 --- @param Length number
 --- @return {Transform: CFrame, Length: number, Color3: Color3, AlwaysOnTop: boolean, Transparency: number}
-function Gizmo:Create(Origin: CFrame, Length: number)
+function Gizmo:Create(Transform: CFrame, Length: number)
 	local PropertyTable = {
-		Transform = Origin,
+		Transform = Transform,
 		Length = Length,
 		AlwaysOnTop = self.Propertys.AlwaysOnTop,
 		Transparency = self.Propertys.Transparency,
