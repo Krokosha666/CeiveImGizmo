@@ -60,7 +60,7 @@ function Gizmo:Draw(Transform: CFrame, Radius0: number, Radius1: number, Length:
 		local TopVertexPosition = TopOfCylinder.Position + TopVertexOffset
 		local BottomVertexPosition = BottomOfCylinder.Position + BottomVertexOffset
 
-		Ceive.Ray:Draw(TopVertexPosition, BottomVertexPosition)
+		Ceive.Line:Draw(TopVertexPosition, BottomVertexPosition)
 
 		Ceive.Circle:Draw(
 			CFrame.new(TopOfCylinder.Position) * Transform.Rotation * CFrame.Angles(0, math.rad(i), 0),
@@ -87,15 +87,15 @@ function Gizmo:Draw(Transform: CFrame, Radius0: number, Radius1: number, Length:
 			continue
 		end
 
-		Ceive.Ray:Draw(LastTop, TopVertexPosition)
-		Ceive.Ray:Draw(LastBottom, BottomVertexPosition)
+		Ceive.Line:Draw(LastTop, TopVertexPosition)
+		Ceive.Line:Draw(LastBottom, BottomVertexPosition)
 
 		LastTop = TopVertexPosition
 		LastBottom = BottomVertexPosition
 	end
 
-	Ceive.Ray:Draw(LastTop, FirstTop)
-	Ceive.Ray:Draw(LastBottom, FirstBottom)
+	Ceive.Line:Draw(LastTop, FirstTop)
+	Ceive.Line:Draw(LastBottom, FirstBottom)
 end
 
 --- @within RoundedFrustum

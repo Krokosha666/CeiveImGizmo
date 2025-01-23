@@ -54,18 +54,18 @@ function Gizmo:Draw(Transform: CFrame, Radius: number, Length: number, Subdivisi
 			Last = VertexPosition
 			First = VertexPosition
 
-			Ceive.Ray:Draw(VertexPosition, TopOfCone.Position)
+			Ceive.Line:Draw(VertexPosition, TopOfCone.Position)
 
 			continue
 		end
 
-		Ceive.Ray:Draw(VertexPosition, TopOfCone.Position)
-		Ceive.Ray:Draw(Last, VertexPosition)
+		Ceive.Line:Draw(VertexPosition, TopOfCone.Position)
+		Ceive.Line:Draw(Last, VertexPosition)
 
 		Last = VertexPosition
 	end
 
-	Ceive.Ray:Draw(Last, First)
+	Ceive.Line:Draw(Last, First)
 end
 
 --- @within Cone

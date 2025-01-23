@@ -65,21 +65,21 @@ function Gizmo:Draw(Transform: CFrame, Size: Vector3, Vertices, Faces)
 			local vCF2 = Vertices[face[2].v]
 			local vCF3 = Vertices[face[3].v]
 
-			Ceive.Ray:Draw(vCF1.Position, vCF2.Position)
-			Ceive.Ray:Draw(vCF2.Position, vCF3.Position)
-			Ceive.Ray:Draw(vCF3.Position, vCF1.Position)
+			Ceive.Line:Draw(vCF1.Position, vCF2.Position)
+			Ceive.Line:Draw(vCF2.Position, vCF3.Position)
+			Ceive.Line:Draw(vCF3.Position, vCF1.Position)
 		else
 			local vCF1 = Vertices[face[1].v]
 			local vCF2 = Vertices[face[2].v]
 			local vCF3 = Vertices[face[3].v]
 			local vCF4 = Vertices[face[4].v]
 
-			Ceive.Ray:Draw(vCF1.Position, vCF2.Position)
-			Ceive.Ray:Draw(vCF1.Position, vCF4.Position)
-			Ceive.Ray:Draw(vCF4.Position, vCF2.Position)
+			Ceive.Line:Draw(vCF1.Position, vCF2.Position)
+			Ceive.Line:Draw(vCF1.Position, vCF4.Position)
+			Ceive.Line:Draw(vCF4.Position, vCF2.Position)
 
-			Ceive.Ray:Draw(vCF3.Position, vCF4.Position)
-			Ceive.Ray:Draw(vCF2.Position, vCF3.Position)
+			Ceive.Line:Draw(vCF3.Position, vCF4.Position)
+			Ceive.Line:Draw(vCF2.Position, vCF3.Position)
 		end
 	end
 end

@@ -42,15 +42,15 @@ function Gizmo:Draw(Transform: CFrame, Size: Vector3, DrawTriangles: boolean)
 		local BottomLeft = Position + (lUv - lRv - lLv)
 		local BottomRight = Position + (lUv + lRv - lLv)
 
-		Ceive.Ray:Draw(TopLeft, TopRight)
-		Ceive.Ray:Draw(TopLeft, BottomLeft)
+		Ceive.Line:Draw(TopLeft, TopRight)
+		Ceive.Line:Draw(TopLeft, BottomLeft)
 
-		Ceive.Ray:Draw(TopRight, BottomRight)
+		Ceive.Line:Draw(TopRight, BottomRight)
 		if DrawTriangles ~= false then
-			Ceive.Ray:Draw(TopRight, BottomLeft)
+			Ceive.Line:Draw(TopRight, BottomLeft)
 		end
 
-		Ceive.Ray:Draw(BottomLeft, BottomRight)
+		Ceive.Line:Draw(BottomLeft, BottomRight)
 	end
 
 	local function CalculateZFace(lUv, lRv, lLv)
@@ -59,15 +59,15 @@ function Gizmo:Draw(Transform: CFrame, Size: Vector3, DrawTriangles: boolean)
 		local BottomLeft = Position + (-lUv - lRv + lLv)
 		local BottomRight = Position + (-lUv + lRv + lLv)
 
-		Ceive.Ray:Draw(TopLeft, TopRight)
-		Ceive.Ray:Draw(TopLeft, BottomLeft)
+		Ceive.Line:Draw(TopLeft, TopRight)
+		Ceive.Line:Draw(TopLeft, BottomLeft)
 
-		Ceive.Ray:Draw(TopRight, BottomRight)
+		Ceive.Line:Draw(TopRight, BottomRight)
 		if DrawTriangles ~= false then
-			Ceive.Ray:Draw(TopRight, BottomLeft)
+			Ceive.Line:Draw(TopRight, BottomLeft)
 		end
 
-		Ceive.Ray:Draw(BottomLeft, BottomRight)
+		Ceive.Line:Draw(BottomLeft, BottomRight)
 	end
 
 	local function CalculateXFace(lUv, lRv, lLv)
@@ -76,15 +76,15 @@ function Gizmo:Draw(Transform: CFrame, Size: Vector3, DrawTriangles: boolean)
 		local BottomLeft = Position + (-lUv - lRv - lLv)
 		local BottomRight = Position + (-lUv - lRv + lLv)
 
-		Ceive.Ray:Draw(TopLeft, TopRight)
-		Ceive.Ray:Draw(TopLeft, BottomLeft)
+		Ceive.Line:Draw(TopLeft, TopRight)
+		Ceive.Line:Draw(TopLeft, BottomLeft)
 
-		Ceive.Ray:Draw(TopRight, BottomRight)
+		Ceive.Line:Draw(TopRight, BottomRight)
 		if DrawTriangles ~= false then
-			Ceive.Ray:Draw(TopRight, BottomLeft)
+			Ceive.Line:Draw(TopRight, BottomLeft)
 		end
 
-		Ceive.Ray:Draw(BottomLeft, BottomRight)
+		Ceive.Line:Draw(BottomLeft, BottomRight)
 	end
 
 	CalculateXFace(sUv, sRv, sLv)

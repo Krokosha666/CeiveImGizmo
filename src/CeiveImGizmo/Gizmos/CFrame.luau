@@ -18,9 +18,10 @@ end
 --- @within CFrame
 --- @function Draw
 --- @param Transform CFrame
---- @param Scale number
-function Gizmo:Draw(Transform: CFrame, Scale: number)
+--- @param Scale number?
+function Gizmo:Draw(Transform: CFrame, Scale: number?)
 	local Ceive = self.Ceive
+	Scale = Scale or 1
 
 	if not Ceive.Enabled then
 		return
@@ -50,12 +51,12 @@ end
 --- @within CFrame
 --- @function Create
 --- @param Transform CFrame
---- @param Scale number
+--- @param Scale number?
 --- @return {Transform: CFrame, Scale: number, AlwaysOnTop: boolean, Transparency: number}
-function Gizmo:Create(Transform: CFrame, Scale: number)
+function Gizmo:Create(Transform: CFrame, Scale: number?)
 	local PropertyTable = {
 		Transform = Transform,
-		Scale = Scale,
+		Scale = Scale or 1,
 		AlwaysOnTop = self.Propertys.AlwaysOnTop,
 		Transparency = self.Propertys.Transparency,
 		Enabled = true,

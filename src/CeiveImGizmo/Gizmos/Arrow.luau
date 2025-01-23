@@ -30,7 +30,7 @@ function Gizmo:Draw(Origin: Vector3, End: Vector3, Radius: number, Length: numbe
 		return
 	end
 
-	Ceive.Ray:Draw(Origin, End)
+	Ceive.Line:Draw(Origin, End)
 
 	local ArrowCFrame = CFrame.lookAt(End + ((Origin - End).Unit * (Length / 2)), End)
 	Ceive.Cone:Draw(ArrowCFrame, Radius, Length, Subdivisions)

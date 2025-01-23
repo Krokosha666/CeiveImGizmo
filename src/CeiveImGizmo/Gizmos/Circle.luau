@@ -49,7 +49,7 @@ function Gizmo:Draw(Transform: CFrame, Radius: number, Subdivisions: number, Ang
 			continue
 		end
 
-		Ceive.Ray:Draw(PreviousVertex, VertexPosition)
+		Ceive.Line:Draw(PreviousVertex, VertexPosition)
 		PreviousVertex = VertexPosition
 		FinishingAngle = i
 	end
@@ -60,11 +60,11 @@ function Gizmo:Draw(Transform: CFrame, Radius: number, Subdivisions: number, Ang
 
 		local VertexPosition = Transform.Position + ((Transform.UpVector * YMagnitude) + (Transform.RightVector * XMagnitude))
 
-		Ceive.Ray:Draw(PreviousVertex, VertexPosition)
+		Ceive.Line:Draw(PreviousVertex, VertexPosition)
 	end
 
 	if ConnectToStart ~= false then
-		Ceive.Ray:Draw(PreviousVertex, FirstVertex)
+		Ceive.Line:Draw(PreviousVertex, FirstVertex)
 	end
 
 	return PreviousVertex

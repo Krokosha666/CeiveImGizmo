@@ -45,13 +45,13 @@ function Gizmo:Draw(Position: Vector3, Normal: Vector3, Size: Vector3)
 		local BottomLeft = Position + (-lUv - lRv + lLv)
 		local BottomRight = Position + (-lUv + lRv + lLv)
 
-		Ceive.Ray:Draw(TopLeft, TopRight)
-		Ceive.Ray:Draw(TopLeft, BottomLeft)
+		Ceive.Line:Draw(TopLeft, TopRight)
+		Ceive.Line:Draw(TopLeft, BottomLeft)
 
-		Ceive.Ray:Draw(TopRight, BottomRight)
-		Ceive.Ray:Draw(TopRight, BottomLeft)
+		Ceive.Line:Draw(TopRight, BottomRight)
+		Ceive.Line:Draw(TopRight, BottomLeft)
 
-		Ceive.Ray:Draw(BottomLeft, BottomRight)
+		Ceive.Line:Draw(BottomLeft, BottomRight)
 	end
 
 	CalculateZFace(sUv, sRv, sLv)

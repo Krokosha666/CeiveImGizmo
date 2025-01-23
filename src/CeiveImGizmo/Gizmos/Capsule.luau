@@ -55,7 +55,7 @@ function Gizmo:Draw(Transform: CFrame, Radius: number, Length: number, Subdivisi
 		local TopVertexPosition = TopOfCylinder.Position + VertexOffset
 		local BottomVertexPosition = BottomOfCylinder.Position + VertexOffset
 
-		Ceive.Ray:Draw(TopVertexPosition, BottomVertexPosition)
+		Ceive.Line:Draw(TopVertexPosition, BottomVertexPosition)
 
 		Ceive.Circle:Draw(CFrame.new(TopOfCylinder.Position) * Transform.Rotation * CFrame.Angles(0, math.rad(i), 0), Radius, Subdivisions / 2, 90, false)
 		Ceive.Circle:Draw(CFrame.new(BottomOfCylinder.Position) * Transform.Rotation * CFrame.Angles(Rad180D, math.rad(i), 0), Radius, Subdivisions / 2, 90, false)
@@ -70,15 +70,15 @@ function Gizmo:Draw(Transform: CFrame, Radius: number, Length: number, Subdivisi
 			continue
 		end
 
-		Ceive.Ray:Draw(LastTop, TopVertexPosition)
-		Ceive.Ray:Draw(LastBottom, BottomVertexPosition)
+		Ceive.Line:Draw(LastTop, TopVertexPosition)
+		Ceive.Line:Draw(LastBottom, BottomVertexPosition)
 
 		LastTop = TopVertexPosition
 		LastBottom = BottomVertexPosition
 	end
 
-	Ceive.Ray:Draw(LastTop, FirstTop)
-	Ceive.Ray:Draw(LastBottom, FirstBottom)
+	Ceive.Line:Draw(LastTop, FirstTop)
+	Ceive.Line:Draw(LastBottom, FirstBottom)
 end
 
 --- @within Capsule

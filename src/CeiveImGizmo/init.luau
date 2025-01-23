@@ -94,10 +94,10 @@ end
 
 -- Types
 
-type IRay = {
-	Draw: (self: IRay, Origin: Vector3, End: Vector3) -> (),
+type ILine = {
+	Draw: (self: ILine, Origin: Vector3, End: Vector3) -> (),
 	Create: (
-		self: IRay,
+		self: ILine,
 		Origin: Vector3,
 		End: Vector3
 	) -> { Origin: Vector3, End: Vector3, Color3: Color3, AlwaysOnTop: boolean, Transparency: number },
@@ -311,10 +311,10 @@ type IMesh = {
 	},
 }
 
-type ILine = {
-	Draw: (self: ILine, Transform: CFrame, Length: number) -> (),
+type IRay = {
+	Draw: (self: IRay, Transform: CFrame, Length: number) -> (),
 	Create: (
-		self: ILine,
+		self: IRay,
 		Transform: CFrame,
 		Length: number
 	) -> { Transform: CFrame, Length: number, Color3: Color3, AlwaysOnTop: boolean, Transparency: number, Enabled: boolean, Destroy: boolean },
@@ -484,13 +484,13 @@ type ICeive = {
 	RemoveAdornments: () -> (),
 	DoCleaning: () -> (),
 	ScheduleCleaning: () -> (),
-	TweenProperies: (Properties: {}, Goal: {}, TweenInfo: TweenInfo) -> () -> (),
+	TweenProperties: (Properties: {}, Goal: {}, TweenInfo: TweenInfo) -> () -> (),
 	Init: () -> (),
 
 	Styles: IStyles,
 
-	Ray: IRay,
 	Line: ILine,
+	Ray: IRay,
 	Box: IBox,
 	Plane: IPlane,
 	Wedge: IWedge,

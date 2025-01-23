@@ -51,15 +51,15 @@ function Gizmo:Draw(Transform: CFrame, Size: Vector3, DrawTriangles: boolean)
 		YTopLeft = TopLeft
 		YTopRight = TopRight
 
-		Ceive.Ray:Draw(TopLeft, TopRight)
-		Ceive.Ray:Draw(TopLeft, BottomLeft)
+		Ceive.Line:Draw(TopLeft, TopRight)
+		Ceive.Line:Draw(TopLeft, BottomLeft)
 
-		Ceive.Ray:Draw(TopRight, BottomRight)
+		Ceive.Line:Draw(TopRight, BottomRight)
 		if DrawTriangles ~= false then
-			Ceive.Ray:Draw(TopRight, BottomLeft)
+			Ceive.Line:Draw(TopRight, BottomLeft)
 		end
 
-		Ceive.Ray:Draw(BottomLeft, BottomRight)
+		Ceive.Line:Draw(BottomLeft, BottomRight)
 	end
 
 	local function CalculateZFace(lUv, lRv, lLv)
@@ -71,25 +71,25 @@ function Gizmo:Draw(Transform: CFrame, Size: Vector3, DrawTriangles: boolean)
 		ZBottomLeft = TopLeft
 		ZBottomRight = TopRight
 
-		Ceive.Ray:Draw(TopLeft, TopRight)
-		Ceive.Ray:Draw(TopLeft, BottomLeft)
+		Ceive.Line:Draw(TopLeft, TopRight)
+		Ceive.Line:Draw(TopLeft, BottomLeft)
 
-		Ceive.Ray:Draw(TopRight, BottomRight)
+		Ceive.Line:Draw(TopRight, BottomRight)
 		if DrawTriangles ~= false then
-			Ceive.Ray:Draw(TopRight, BottomLeft)
+			Ceive.Line:Draw(TopRight, BottomLeft)
 		end
 
-		Ceive.Ray:Draw(BottomLeft, BottomRight)
+		Ceive.Line:Draw(BottomLeft, BottomRight)
 	end
 
 	CalculateYFace(-sUv, sRv, sLv)
 
 	CalculateZFace(sUv, sRv, -sLv)
 
-	Ceive.Ray:Draw(YTopLeft, ZBottomLeft)
-	Ceive.Ray:Draw(YTopRight, ZBottomRight)
+	Ceive.Line:Draw(YTopLeft, ZBottomLeft)
+	Ceive.Line:Draw(YTopRight, ZBottomRight)
 	if DrawTriangles ~= false then
-		Ceive.Ray:Draw(YTopRight, ZBottomLeft)
+		Ceive.Line:Draw(YTopRight, ZBottomLeft)
 	end
 end
 

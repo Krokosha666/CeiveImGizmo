@@ -40,7 +40,7 @@ function Gizmo:Draw(Origin: Vector3, End: Vector3, CylinderRadius: number, ConeR
 
 		Ceive.VolumeCylinder:Draw(CylinderCFrame, CylinderRadius, CylinderLength)
 	else
-		Ceive.Ray:Draw(Origin, End)
+		Ceive.Line:Draw(Origin, End)
 	end
 
 	Ceive.VolumeCone:Draw(ArrowCFrame, ConeRadius, Length)
